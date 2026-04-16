@@ -13,6 +13,7 @@ const app = require("./app");
 // Je déclare une variable app qui importe le fichier app.js
 const server = http.createServer(app);
 
+// Je déclare une variable numeroPort qui contient le numéro de port sur lequel le serveur va écouter
 const numeroPort = 3000;
 
 // Je lance le serveur sur le port 3000
