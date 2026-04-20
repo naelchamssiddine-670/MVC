@@ -13,6 +13,11 @@ const authentifiactionController = require("../controllers/authentificationContr
 // J'initialise une application expressjs
 const router = express.Router();
 // Maintenant, je trace mes routes en utilisant router
+
 router.get("/register", authentifiactionController.registerView);
-// La route pour se connecter, exemple localhost:3000/login
+// La route get pour afficher la page d'enregistrement, exemple localhost:3000/register
+
+router.post("/register", authentifiactionController.registerUser);
+// la route post pour enregistrer un utilisateur, exemple localhost:3000/register
+
 module.exports = router;
