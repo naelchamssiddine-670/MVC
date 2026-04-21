@@ -14,7 +14,7 @@ const app = require("./app");
 const server = http.createServer(app);
 
 // Je déclare une variable numeroPort qui contient le numéro de port sur lequel le serveur va écouter
-const numeroPort = 3003;
+const numeroPort = 3000;
 
 // Je lance le serveur sur le port 3000
 server.listen(numeroPort, () => {

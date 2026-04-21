@@ -6,7 +6,7 @@ const DataTypes = require("sequelize");
 // J'importe le fichier db.js qui contient la configuration de la base de données
 const sequelize = require("../db");
 // Je définis le modèle User en utilisant la méthode define de Sequelize
-module.exports = sequelize.define(
+/*module.exports = sequelize.define(
     "User", {
         id: {// Je définis l'attribut id qui est de type entier, clé primaire et auto-incrémenté
             type: DataTypes.INTEGER,// type de l'attribut id
@@ -23,4 +23,17 @@ module.exports = sequelize.define(
         }
     }
 );
+*/
+module.exports = (sequelize, Sequelize) => {
+    const UserModdel = sequelize.define("user", {
+        email: {
+            type: Sequelize.STRING,
+            unique: true
+        },
+        password: {
+            type: Sequelize.STRING,
 
+        }
+    });
+    return UserModdel;
+}
