@@ -32,7 +32,7 @@ app.use(express.static("public"));// Je définis le dossier des fichiers statiqu
 app.use(express.urlencoded({ extended: false }));// Je configure l'application pour pouvoir lire les données du formulaire
 
 
-db.sequelize.sync({force: true}).then(() => {// Je synchronise les modèles avec la base de données
+db.sequelize.sync().then(() => {// Je synchronise les modèles avec la base de données
     console.log("Sync db")// J'affiche un message dans la console pour indiquer que la synchronisation a réussi
 }).catch((err) => {// Je gère les erreurs de synchronisation
     console.log("Failed to sync db: " + err.message);// J'affiche un message dans la console en cas d'erreur lors de la synchronisation

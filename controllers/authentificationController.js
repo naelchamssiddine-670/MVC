@@ -20,6 +20,7 @@ module.exports = {
 
         // Je récupère le mail et le mot de passe du formulaire
         const emailUser = req.body.email;
+        // Je récupère le mot de passe saisi
         const motdepasseUser = req.body.motdepasse;
 
         console.log("### Controler - email : ", emailUser);

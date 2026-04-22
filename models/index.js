@@ -6,7 +6,6 @@ const sequelize = new Sequelize(// Je définis les paramètres de connexion à l
     dbConfig.BD, dbConfig.USER, dbConfig.PASSWORD, {// nom de la base de données, nom d'utilisateur, mot de passe
         host: dbConfig.HOST,// hôte de la base de données
         dialect: dbConfig.dialect,// type de base de données
-        operatorsAliases: false,// désactive les alias d'opérateurs obsolètes
 
         pool: {// pool de connexions
             max: dbConfig.pool.max,// nombre maximum de connections par pool

@@ -10,6 +10,8 @@
 const express = require("express");
 // J'importe le fichier authentificationController.js
 const authentifiactionController = require("../controllers/authentificationController");
+
+const userController = require("../controllers/user.Controller");
 // J'initialise une application expressjs
 const router = express.Router();
 // Maintenant, je trace mes routes en utilisant router
@@ -19,5 +21,9 @@ router.get("/register", authentifiactionController.registerView);
 
 router.post("/register", authentifiactionController.registerUser);
 // la route post pour enregistrer un utilisateur, exemple localhost:3000/register
+
+router.post("/register", userController.create);
+
+router.get("/Users/:id", userController.findOne);
 
 module.exports = router;

@@ -21,4 +21,30 @@ exports.create = (req, res) => {// Je définis une fonction create qui prend en 
                 message: err.message || "Une erreur s'est produite lors de la création de l'utilisateur."
             });
         });
-};  
+}; 
+
+
+exports.findOne = (req, res) => {
+    // Je récupère l'id de l'utilisateur
+    const idUser = req.params.id;
+
+    // Je recherche l'utilisateur dans la base de données
+    User.findByPk(idUser)
+        .then(data => {
+            if(data) { // si je trouve l'utilisateur (data) 
+                res.send(data); // ALORS j'ai l'utilisateur (data)
+            }else{
+                res.status(404).send({
+                    message: `L'utilisateur avec l'identifiant ${idUser} n'existe pas .`
+                    
+                });
+            }
+    
+        })
+        .catch(err =>{
+            res.status(500).send({
+                message : `Erreur lors de la recherche de
+                l'utilisateur avec l'identifiant ${idUser}`
+            });
+        });
+};
