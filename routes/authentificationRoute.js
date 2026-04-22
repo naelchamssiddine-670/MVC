@@ -26,4 +26,5 @@ router.post("/register", userController.create);
 
 router.get("/Users/:id", userController.findOne);
 
+router.get("/Users", userController.findAll);
 module.exports = router;
