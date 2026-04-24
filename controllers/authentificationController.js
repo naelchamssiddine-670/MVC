@@ -5,7 +5,9 @@
 
 // J'importe le modèle User via db
 const db = require("../models");
+// L'objet db contient la connexion Sequelize et les modeles declares.
 const User = db.users;
+// On recupere ici le modele user pour creer des enregistrements.
 
 module.exports = {
     // Je crée une fonction registerView qui prend en paramètre req et res
@@ -17,6 +19,7 @@ module.exports = {
     registerUser: async (req, res) => {
         console.log("### Controler registerUser ***");
         console.log("### Controler - req.body : ", req.body);
+        // Les logs permettent de voir ce que le formulaire envoie au serveur.
 
         // Je récupère le mail et le mot de passe du formulaire
         const emailUser = req.body.email;
@@ -39,6 +42,7 @@ module.exports = {
                 email: emailUser,
                 password: motdepasseUser
             });
+            // La creation en base se fait via Sequelize avec les valeurs du formulaire.
             console.log("Utilisateur créé avec succès : ", nouvelUtilisateur);
             res.redirect("/");
         } catch (err) {

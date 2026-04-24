@@ -17,11 +17,15 @@ const sequelize = new Sequelize(// Je définis les paramètres de connexion à l
 );
 // J'initialise une variable db qui va contenir les modèles de la base de données
 const db = {};
+// L'objet db servira de conteneur commun pour la connexion et les modeles.
 // J'associe la classe Sequelize à la variable db.Sequelize
 db.Sequelize = Sequelize;
 // J'associe la connexion à la base de données à la variable db.sequelize
 db.sequelize = sequelize;
+// La connexion active est exposee ici pour etre reutilisable ailleurs.
 // J'importe le modèle User et je l'associe à la variable db.users
 db.users = require("./User")(sequelize, Sequelize);
+// Le modele user est initialise puis attache a db.users.
 // J'importe le modèle User et je l'associe à la variable db.users
 module.exports = db;
+// L'export final permet aux controleurs d'utiliser db.users et db.sequelize.

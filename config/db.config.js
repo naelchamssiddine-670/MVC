@@ -1,4 +1,5 @@
 module.exports = {
+    // Parametres principaux de connexion a la base MySQL locale.
     HOST: "localhost",
     USER: "root",
     PASSWORD: "naelchamssiddine@118",

@@ -25,6 +25,7 @@ const sequelize = require("../db");
 );
 */
 module.exports = (sequelize, Sequelize) => {
+    // Le modele actif definit simplement les colonnes email et password.
     const UserModdel = sequelize.define("user", {
         email: {
             type: Sequelize.STRING,
@@ -36,5 +37,6 @@ module.exports = (sequelize, Sequelize) => {
         }
     });
     
+    // Le modele est retourne pour etre enregistre dans models/index.js.
     return UserModdel;
 }

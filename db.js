@@ -4,6 +4,7 @@
  */
 
 const Sequelize = require("sequelize");
+// Sequelize est l'ORM utilise pour dialoguer avec MySQL.
 // Je définis les paramètres de connexion à la base de données
 const sequelize = new Sequelize(
     "maygourmet",// nom de la base de données

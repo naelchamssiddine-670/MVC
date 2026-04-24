@@ -1,4 +1,5 @@
 
+/* Cette feuille gere uniquement l'apparence de la barre de navigation. */
 /* Style the navigation bar */
 .navbar {
     background-color: #d8db14;
@@ -25,6 +26,7 @@ a.active {
 }
 
 @media screen and (max-width: 500px) {
+    /* En dessous de 500px, les liens se placent les uns sous les autres. */
     .navbar a {
         float: none;
         display: block;

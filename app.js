@@ -4,6 +4,7 @@
 
 // J'importe le package expressjs
 const express = require("express");
+// Ce bloc rassemble toutes les dependances necessaires au demarrage.
 
 // import myql2
 const mysql2 = require("mysql2");
@@ -19,9 +20,14 @@ const authRoute = require("./routes/authentificationRoute");
 
 // J'importe le models pour que sa se s'incronnise avec sequelize
 const db = require("./models");
+// Les modeles sont charges ici pour synchroniser la base avant de servir l'application.
 
 // J'initialise une application expressjs
 const app = express();
+// Cette variable represente l'application web complete.
+// Les vues seront rendues avec EJS depuis le dossier ./views.
+// Les fichiers statiques proviennent du dossier public.
+// express.urlencoded permet de recuperer les donnees des formulaires dans req.body.
 
 app.set("Views", "./views");// Je définis le dossier des vues
 
@@ -53,10 +59,13 @@ db.sequelize.sync().then(() => {// Je synchronise les modèles avec la base de d
 
 // J'importe les routes
 app.use("/", accueilRoute);
+// Toutes les routes definies dans accueilRoute sont montees a la racine.
 
 // J'importe le fichier routes/authentificationRoute.js
 app.use("/", authRoute);
+// Les routes d'inscription et les endpoints utilisateur sont aussi montes a la racine.
 
 
 // J'importe le fichier routes.js
 module.exports = app;
+// Ce module est importe ensuite dans myserver.js pour demarrer le serveur HTTP.
